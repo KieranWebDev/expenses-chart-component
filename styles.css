@@ -34,14 +34,13 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 1rem;
 }
 
 /* CARD */
 .main-container {
   border: 1px solid black;
-  width: 100%;
-  width: clamp(300px, 100%, 540px);
-  margin: 1rem;
+  width: clamp(280px, 100%, 540px);
 }
 /* balance-section */
 .balance-section {
@@ -67,4 +66,54 @@ body {
 .balance-section-left__amount {
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+/* GRAPH */
+
+.graph-section {
+  padding: 20px;
+}
+.graph-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.day-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: clamp(120px, 100%, 180px);
+}
+
+.graph-bar-container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  height: 200px;
+  width: 100%;
+}
+
+.graph-bar {
+  width: 70%;
+  background-color: var(--soft-red);
+  margin: 0 auto;
+  flex-basis: 100%;
+}
+.day {
+  font-size: 14px;
+}
+
+.hidden {
+  /* display: none; */
+  visibility: hidden;
+}
+
+.graph-bar:hover {
+  background-color: green;
+}
+.graph-bar:hover + .hidden {
+  visibility: visible;
 }
