@@ -23,6 +23,7 @@ html {
   --cream: #f8e9dd;
   --very-pale-orange: #fffaf5;
   --white: #ffffff;
+  --orange-hover: #ff9b86;
 }
 
 /* GLOBAL STYLES */
@@ -73,26 +74,29 @@ body {
 .graph-section {
   padding: 20px;
 }
+.graph-section h2 {
+  margin-bottom: 1rem;
+}
 .graph-container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 1fr;
-  justify-content: center;
-  align-items: center;
+
+  /* align-items: center; */
 }
 .day-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  height: clamp(120px, 100%, 180px);
+  height: 250px;
 }
 
 .graph-bar-container {
   display: flex;
   flex-direction: column-reverse;
-  justify-content: flex-end;
-  height: 200px;
+  justify-content: flex-start;
+  align-items: center;
+  height: 250px;
   width: 100%;
 }
 
@@ -100,10 +104,20 @@ body {
   width: 70%;
   background-color: var(--soft-red);
   margin: 0 auto;
-  flex-basis: 100%;
+  flex-basis: 90%;
+  border-radius: 8px;
 }
 .day {
   font-size: 14px;
+}
+.daily-amount-spent {
+  background-color: black;
+  padding: 8px 5px;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  width: 100%;
 }
 
 .hidden {
@@ -112,8 +126,9 @@ body {
 }
 
 .graph-bar:hover {
-  background-color: green;
+  background-color: var(--orange-hover);
 }
-.graph-bar:hover + .hidden {
+.graph-bar:hover + .hidden,
+graph-bar:active + .hidden {
   visibility: visible;
 }
